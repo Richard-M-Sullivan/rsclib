@@ -1,0 +1,15 @@
+#! /usr/bin/env bash
+
+(
+    while [[ "$(pwd)" != "/"  ]]; do
+        if [[ -e run.sh ]]; then
+            ./run.sh
+            break
+        elif [[ -e run ]]; then
+            ./run
+            break
+        else
+            cd ..
+        fi
+    done
+)

@@ -1,0 +1,12 @@
+#! /usr/bin/env bash
+
+(
+    while [[ "$(pwd)" != "/"  ]]; do
+        if [[ -e build.sh ]]; then
+            ./build.sh
+            break
+        else
+            cd ..
+        fi
+    done
+)
